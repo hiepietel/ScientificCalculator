@@ -177,5 +177,47 @@ namespace ScientificCalculator
         {
             Input(",");
         }
+
+        private void Btn_cos_Click(object sender, EventArgs e)
+        {
+            double temp = double.Parse(textBox1.Text);
+            textBox1.Text = (Math.Cos(temp)).ToString();
+            history_textBox.Text += "Cos(" + temp.ToString() + ") = " + textBox1.Text + "\r\n";
+        }
+
+        private void Tan_btn_Click(object sender, EventArgs e)
+        {
+            double temp = double.Parse(textBox1.Text);
+            textBox1.Text = (Math.Tan(temp)).ToString();
+            history_textBox.Text += "Tan(" + temp.ToString() + ") = " + textBox1.Text + "\r\n";
+        }
+
+        private void Log_btn_Click(object sender, EventArgs e)
+        {
+            double temp = double.Parse(textBox1.Text);
+            textBox1.Text = (Math.Log10(temp)).ToString();
+            history_textBox.Text += "Log(" + temp.ToString() + ") = " + textBox1.Text + "\r\n";
+        }
+
+        private void Btn_reciprocal_Click(object sender, EventArgs e)
+        {
+            double temp = double.Parse(textBox1.Text);
+            //temp = 1 / temp;
+            textBox1.Text = (1/temp).ToString();
+            history_textBox.Text += "1/" + temp.ToString() + " = " + textBox1.Text + "\r\n";
+        }
+
+        private void Factorial_btn_Click(object sender, EventArgs e)
+        {
+            double temp = double.Parse(textBox1.Text);
+            temp = Math.Floor(temp);
+            double sum = 1.0;
+            for (double i =1.0; i<=temp; i+=1.0)
+            {
+                sum *= i;
+            }
+            history_textBox.Text = textBox1.Text + "! = " + sum.ToString() + "\r\n";
+            textBox1.Text = sum.ToString();    
+        }
     }
 }
