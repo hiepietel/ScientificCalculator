@@ -152,7 +152,13 @@ namespace ScientificCalculator
 
         private void Del_btn_Click(object sender, EventArgs e)
         {
-
+            if (textBox1.Text.Length > 1)
+                textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
+            else
+                textBox1.Text = "0";
+            //string temp = textBox1.Text;
+            //int length = temp.Length - 1;
+            //textBox1.Text = temp.Remove(0,length);
         }
 
         private void Ac_btn_Click(object sender, EventArgs e)
@@ -165,6 +171,11 @@ namespace ScientificCalculator
         private void Ans_btn_Click(object sender, EventArgs e)
         {
             textBox1.Text = ans.ToString();
+        }
+
+        private void Dot_btn_Click(object sender, EventArgs e)
+        {
+            Input(",");
         }
     }
 }
