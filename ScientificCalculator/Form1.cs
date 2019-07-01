@@ -151,6 +151,7 @@ namespace ScientificCalculator
         {
             double temp = double.Parse(textBox1.Text);
             textBox1.Text = (Math.Sin(temp)).ToString();
+            ans = Decimal.Parse(textBox1.Text);
             history_textBox.Text += "Sin(" + temp.ToString() + ") = " + textBox1.Text +"\r\n";
         }
 
@@ -187,6 +188,7 @@ namespace ScientificCalculator
             double temp = double.Parse(textBox1.Text);
             textBox1.Text = (Math.Cos(temp)).ToString();
             history_textBox.Text += "Cos(" + temp.ToString() + ") = " + textBox1.Text + "\r\n";
+            ans = Decimal.Parse(textBox1.Text);
         }
 
         private void Tan_btn_Click(object sender, EventArgs e)
@@ -194,6 +196,7 @@ namespace ScientificCalculator
             double temp = double.Parse(textBox1.Text);
             textBox1.Text = (Math.Tan(temp)).ToString();
             history_textBox.Text += "Tan(" + temp.ToString() + ") = " + textBox1.Text + "\r\n";
+            ans = Decimal.Parse(textBox1.Text);
         }
 
         private void Log_btn_Click(object sender, EventArgs e)
@@ -201,6 +204,7 @@ namespace ScientificCalculator
             double temp = double.Parse(textBox1.Text);
             textBox1.Text = (Math.Log10(temp)).ToString();
             history_textBox.Text += "Log(" + temp.ToString() + ") = " + textBox1.Text + "\r\n";
+            ans = Decimal.Parse(textBox1.Text);
         }
 
         private void Btn_reciprocal_Click(object sender, EventArgs e)
@@ -209,6 +213,7 @@ namespace ScientificCalculator
             //temp = 1 / temp;
             textBox1.Text = (1/temp).ToString();
             history_textBox.Text += "1/" + temp.ToString() + " = " + textBox1.Text + "\r\n";
+            ans = Decimal.Parse(textBox1.Text);
         }
 
         private void Factorial_btn_Click(object sender, EventArgs e)
@@ -220,8 +225,9 @@ namespace ScientificCalculator
             {
                 sum *= i;
             }
-            history_textBox.Text = textBox1.Text + "! = " + sum.ToString() + "\r\n";
-            textBox1.Text = sum.ToString();    
+            history_textBox.Text += textBox1.Text + "! = " + sum.ToString() + "\r\n";
+            textBox1.Text = sum.ToString();
+            ans = Decimal.Parse(textBox1.Text);
         }
 
 
@@ -253,6 +259,7 @@ namespace ScientificCalculator
             num1 = decimal.Parse(textBox1.Text);
             operation = "%";
             textBox1.Text = "0";
+            ans = Decimal.Parse(textBox1.Text);
         }
 
         private void Btn_cube_Click(object sender, EventArgs e)
@@ -260,6 +267,7 @@ namespace ScientificCalculator
             num1 = decimal.Parse(textBox1.Text);
             operation = "^";
             textBox1.Text = "0";
+            ans = Decimal.Parse(textBox1.Text);
         }
 
         private void Btn_plusminus_Click(object sender, EventArgs e)
@@ -274,6 +282,10 @@ namespace ScientificCalculator
             double temp = double.Parse(textBox1.Text);
             textBox1.Text = (Math.Tanh(temp)).ToString();
             history_textBox.Text += "Tanh(" + temp.ToString() + ") = " + textBox1.Text + "\r\n";
+            if (!Decimal.TryParse(textBox1.Text, out ans))
+            {
+                ans = 99999999999999;
+            }
         }
 
         private void Cosh_btn_Click(object sender, EventArgs e)
@@ -281,6 +293,10 @@ namespace ScientificCalculator
             double temp = double.Parse(textBox1.Text);
             textBox1.Text = (Math.Cosh(temp)).ToString();
             history_textBox.Text += "Cosh(" + temp.ToString() + ") = " + textBox1.Text + "\r\n";
+            if (!Decimal.TryParse(textBox1.Text, out ans))
+            {
+                ans = 99999999999999;
+            }
         }
 
         private void Sinh_btn_Click(object sender, EventArgs e)
@@ -288,6 +304,9 @@ namespace ScientificCalculator
             double temp = double.Parse(textBox1.Text);
             textBox1.Text = (Math.Sinh(temp)).ToString();
             history_textBox.Text += "Sinh(" + temp.ToString() + ") = " + textBox1.Text + "\r\n";
+            if(!Decimal.TryParse(textBox1.Text, out ans)){
+                ans = 99999999999999;
+            }
         }
 
         private void ClearMenu_Click(object sender, EventArgs e)

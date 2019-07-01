@@ -98,17 +98,20 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.GrayText;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Location = new System.Drawing.Point(12, 32);
+            this.textBox1.Location = new System.Drawing.Point(10, 32);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(462, 44);
+            this.textBox1.Size = new System.Drawing.Size(470, 44);
             this.textBox1.TabIndex = 1;
             // 
             // ans_btn
             // 
             this.ans_btn.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ans_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ans_btn.FlatAppearance.BorderSize = 0;
+            this.ans_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.ans_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ans_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ans_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ans_btn.Location = new System.Drawing.Point(120, 180);
@@ -305,7 +308,7 @@
             this.panel1.Controls.Add(this.btn_2);
             this.panel1.Controls.Add(this.btn_3);
             this.panel1.Controls.Add(this.btn_5);
-            this.panel1.Location = new System.Drawing.Point(12, 199);
+            this.panel1.Location = new System.Drawing.Point(10, 200);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel1.Size = new System.Drawing.Size(170, 230);
@@ -335,7 +338,7 @@
             this.panel2.Controls.Add(this.btn_multiply);
             this.panel2.Controls.Add(this.btn_cube);
             this.panel2.Controls.Add(this.btn_divide);
-            this.panel2.Location = new System.Drawing.Point(188, 199);
+            this.panel2.Location = new System.Drawing.Point(190, 200);
             this.panel2.Name = "panel2";
             this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel2.Size = new System.Drawing.Size(110, 230);
@@ -474,7 +477,7 @@
             this.panel3.Controls.Add(this.tan_btn);
             this.panel3.Controls.Add(this.factorial_btn);
             this.panel3.Controls.Add(this.log_btn);
-            this.panel3.Location = new System.Drawing.Point(304, 198);
+            this.panel3.Location = new System.Drawing.Point(310, 200);
             this.panel3.Name = "panel3";
             this.panel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel3.Size = new System.Drawing.Size(170, 230);
@@ -486,7 +489,7 @@
             this.ac_btn.FlatAppearance.BorderSize = 0;
             this.ac_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.ac_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ac_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ac_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ac_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ac_btn.Location = new System.Drawing.Point(60, 180);
             this.ac_btn.Margin = new System.Windows.Forms.Padding(0);
@@ -519,8 +522,8 @@
             this.tanh_btn.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tanh_btn.FlatAppearance.BorderSize = 0;
             this.tanh_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.tanh_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.tanh_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tanh_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tanh_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tanh_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tanh_btn.Location = new System.Drawing.Point(120, 120);
             this.tanh_btn.Margin = new System.Windows.Forms.Padding(0);
@@ -554,14 +557,14 @@
             this.del_btn.FlatAppearance.BorderSize = 0;
             this.del_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.del_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.del_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.del_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.del_btn.Location = new System.Drawing.Point(0, 180);
             this.del_btn.Margin = new System.Windows.Forms.Padding(0);
             this.del_btn.Name = "del_btn";
             this.del_btn.Size = new System.Drawing.Size(50, 50);
             this.del_btn.TabIndex = 12;
-            this.del_btn.Text = "Del";
+            this.del_btn.Text = "DEL";
             this.del_btn.UseVisualStyleBackColor = false;
             this.del_btn.Click += new System.EventHandler(this.Del_btn_Click);
             // 
@@ -604,7 +607,7 @@
             this.btn_reciprocal.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btn_reciprocal.FlatAppearance.BorderSize = 0;
             this.btn_reciprocal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.btn_reciprocal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_reciprocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_reciprocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.btn_reciprocal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_reciprocal.Location = new System.Drawing.Point(0, 120);
@@ -638,7 +641,7 @@
             this.factorial_btn.BackColor = System.Drawing.SystemColors.ControlDark;
             this.factorial_btn.FlatAppearance.BorderSize = 0;
             this.factorial_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.factorial_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.factorial_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.factorial_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.factorial_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.factorial_btn.Location = new System.Drawing.Point(60, 120);
@@ -670,12 +673,13 @@
             // history_textBox
             // 
             this.history_textBox.BackColor = System.Drawing.SystemColors.GrayText;
+            this.history_textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.history_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.history_textBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.history_textBox.Location = new System.Drawing.Point(510, 32);
+            this.history_textBox.Location = new System.Drawing.Point(490, 32);
             this.history_textBox.Multiline = true;
             this.history_textBox.Name = "history_textBox";
-            this.history_textBox.Size = new System.Drawing.Size(170, 395);
+            this.history_textBox.Size = new System.Drawing.Size(200, 398);
             this.history_textBox.TabIndex = 16;
             // 
             // menu
