@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -133,7 +134,10 @@ namespace ScientificCalculator
                 case "%":
                     textBox1.Text = (num1 % num2).ToString();
                     break;
-            
+                case "^":
+                    textBox1.Text = (Math.Pow(double.Parse(num1.ToString()), double.Parse(num2.ToString()))).ToString();
+                    break;
+                    
             }
             ans = Decimal.Parse(textBox1.Text);
             history_textBox.Text += num1.ToString() + operation + num2.ToString() + "=" + textBox1.Text +"\r\n";
@@ -218,6 +222,77 @@ namespace ScientificCalculator
             }
             history_textBox.Text = textBox1.Text + "! = " + sum.ToString() + "\r\n";
             textBox1.Text = sum.ToString();    
+        }
+
+
+        private void SaveAs_Click(object sender, EventArgs e)
+        {
+            saveFile.InitialDirectory = @"C:\Users\hiepietel\source\repos\ScientificCalculator\ScientificCalculator\txt";
+            saveFile.RestoreDirectory = true;
+            saveFile.FileName = "text.txt";
+            saveFile.DefaultExt = "txt";
+            saveFile.Filter = "txt files (*.txt)|*.txt";
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                Stream fileStream = saveFile.OpenFile();
+                StreamWriter sw = new StreamWriter(fileStream);
+
+                sw.Write(history_textBox.Text);
+
+                sw.Close();
+                fileStream.Close();
+
+
+
+            }
+        }
+
+        private void Btn_modulo_Click(object sender, EventArgs e)
+        {
+            num1 = decimal.Parse(textBox1.Text);
+            operation = "%";
+            textBox1.Text = "0";
+        }
+
+        private void Btn_cube_Click(object sender, EventArgs e)
+        {
+            num1 = decimal.Parse(textBox1.Text);
+            operation = "^";
+            textBox1.Text = "0";
+        }
+
+        private void Btn_plusminus_Click(object sender, EventArgs e)
+        {
+            decimal temp = decimal.Parse(textBox1.Text);
+            temp = -temp;
+            textBox1.Text = temp.ToString();
+        }
+
+        private void Tanh_btn_Click(object sender, EventArgs e)
+        {
+            double temp = double.Parse(textBox1.Text);
+            textBox1.Text = (Math.Tanh(temp)).ToString();
+            history_textBox.Text += "Tanh(" + temp.ToString() + ") = " + textBox1.Text + "\r\n";
+        }
+
+        private void Cosh_btn_Click(object sender, EventArgs e)
+        {
+            double temp = double.Parse(textBox1.Text);
+            textBox1.Text = (Math.Cosh(temp)).ToString();
+            history_textBox.Text += "Cosh(" + temp.ToString() + ") = " + textBox1.Text + "\r\n";
+        }
+
+        private void Sinh_btn_Click(object sender, EventArgs e)
+        {
+            double temp = double.Parse(textBox1.Text);
+            textBox1.Text = (Math.Sinh(temp)).ToString();
+            history_textBox.Text += "Sinh(" + temp.ToString() + ") = " + textBox1.Text + "\r\n";
+        }
+
+        private void ClearMenu_Click(object sender, EventArgs e)
+        {
+            history_textBox.Clear();
         }
     }
 }

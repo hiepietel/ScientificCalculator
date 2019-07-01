@@ -43,6 +43,7 @@
             this.btn_8 = new System.Windows.Forms.Button();
             this.btn_9 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_plusminus = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_minus = new System.Windows.Forms.Button();
             this.btn_plus = new System.Windows.Forms.Button();
@@ -53,6 +54,9 @@
             this.btn_divide = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ac_btn = new System.Windows.Forms.Button();
+            this.sinh_btn = new System.Windows.Forms.Button();
+            this.tanh_btn = new System.Windows.Forms.Button();
+            this.cosh_btn = new System.Windows.Forms.Button();
             this.del_btn = new System.Windows.Forms.Button();
             this.btn_cos = new System.Windows.Forms.Button();
             this.btn_sin = new System.Windows.Forms.Button();
@@ -61,10 +65,16 @@
             this.factorial_btn = new System.Windows.Forms.Button();
             this.log_btn = new System.Windows.Forms.Button();
             this.history_textBox = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menu = new System.Windows.Forms.MenuStrip();
+            this.save = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFile = new System.Windows.Forms.SaveFileDialog();
+            this.clearMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_0
@@ -87,10 +97,12 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.GrayText;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
             this.textBox1.Location = new System.Drawing.Point(12, 32);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(402, 44);
+            this.textBox1.Size = new System.Drawing.Size(462, 44);
             this.textBox1.TabIndex = 1;
             // 
             // ans_btn
@@ -281,8 +293,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_plusminus);
             this.panel1.Controls.Add(this.btn_9);
-            this.panel1.Controls.Add(this.ans_btn);
             this.panel1.Controls.Add(this.btn_8);
             this.panel1.Controls.Add(this.btn_0);
             this.panel1.Controls.Add(this.btn_7);
@@ -298,6 +310,21 @@
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel1.Size = new System.Drawing.Size(170, 230);
             this.panel1.TabIndex = 13;
+            // 
+            // btn_plusminus
+            // 
+            this.btn_plusminus.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btn_plusminus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_plusminus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_plusminus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_plusminus.Location = new System.Drawing.Point(120, 180);
+            this.btn_plusminus.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_plusminus.Name = "btn_plusminus";
+            this.btn_plusminus.Size = new System.Drawing.Size(50, 50);
+            this.btn_plusminus.TabIndex = 18;
+            this.btn_plusminus.Text = "+/-";
+            this.btn_plusminus.UseVisualStyleBackColor = false;
+            this.btn_plusminus.Click += new System.EventHandler(this.Btn_plusminus_Click);
             // 
             // panel2
             // 
@@ -317,7 +344,9 @@
             // btn_minus
             // 
             this.btn_minus.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btn_minus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_minus.FlatAppearance.BorderSize = 0;
+            this.btn_minus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Magenta;
+            this.btn_minus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_minus.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn_minus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_minus.Location = new System.Drawing.Point(60, 0);
@@ -332,7 +361,9 @@
             // btn_plus
             // 
             this.btn_plus.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btn_plus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_plus.FlatAppearance.BorderSize = 0;
+            this.btn_plus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Magenta;
+            this.btn_plus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_plus.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn_plus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_plus.Location = new System.Drawing.Point(0, 0);
@@ -347,7 +378,9 @@
             // btn_equal
             // 
             this.btn_equal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_equal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_equal.FlatAppearance.BorderSize = 0;
+            this.btn_equal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.btn_equal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_equal.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn_equal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_equal.Location = new System.Drawing.Point(0, 180);
@@ -362,7 +395,9 @@
             // btn_modulo
             // 
             this.btn_modulo.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btn_modulo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_modulo.FlatAppearance.BorderSize = 0;
+            this.btn_modulo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Magenta;
+            this.btn_modulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_modulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn_modulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_modulo.Location = new System.Drawing.Point(0, 120);
@@ -372,11 +407,14 @@
             this.btn_modulo.TabIndex = 4;
             this.btn_modulo.Text = "%";
             this.btn_modulo.UseVisualStyleBackColor = false;
+            this.btn_modulo.Click += new System.EventHandler(this.Btn_modulo_Click);
             // 
             // btn_multiply
             // 
             this.btn_multiply.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btn_multiply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_multiply.FlatAppearance.BorderSize = 0;
+            this.btn_multiply.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Magenta;
+            this.btn_multiply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_multiply.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn_multiply.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_multiply.Location = new System.Drawing.Point(0, 60);
@@ -391,7 +429,9 @@
             // btn_cube
             // 
             this.btn_cube.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btn_cube.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_cube.FlatAppearance.BorderSize = 0;
+            this.btn_cube.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Magenta;
+            this.btn_cube.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cube.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn_cube.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_cube.Location = new System.Drawing.Point(60, 120);
@@ -401,11 +441,14 @@
             this.btn_cube.TabIndex = 5;
             this.btn_cube.Text = "^";
             this.btn_cube.UseVisualStyleBackColor = false;
+            this.btn_cube.Click += new System.EventHandler(this.Btn_cube_Click);
             // 
             // btn_divide
             // 
             this.btn_divide.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btn_divide.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_divide.FlatAppearance.BorderSize = 0;
+            this.btn_divide.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Magenta;
+            this.btn_divide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_divide.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn_divide.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_divide.Location = new System.Drawing.Point(60, 60);
@@ -420,6 +463,10 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.ac_btn);
+            this.panel3.Controls.Add(this.ans_btn);
+            this.panel3.Controls.Add(this.sinh_btn);
+            this.panel3.Controls.Add(this.tanh_btn);
+            this.panel3.Controls.Add(this.cosh_btn);
             this.panel3.Controls.Add(this.del_btn);
             this.panel3.Controls.Add(this.btn_cos);
             this.panel3.Controls.Add(this.btn_sin);
@@ -430,28 +477,83 @@
             this.panel3.Location = new System.Drawing.Point(304, 198);
             this.panel3.Name = "panel3";
             this.panel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panel3.Size = new System.Drawing.Size(110, 230);
+            this.panel3.Size = new System.Drawing.Size(170, 230);
             this.panel3.TabIndex = 15;
             // 
             // ac_btn
             // 
             this.ac_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ac_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ac_btn.FlatAppearance.BorderSize = 0;
+            this.ac_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.ac_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ac_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ac_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ac_btn.Location = new System.Drawing.Point(60, 179);
+            this.ac_btn.Location = new System.Drawing.Point(60, 180);
             this.ac_btn.Margin = new System.Windows.Forms.Padding(0);
             this.ac_btn.Name = "ac_btn";
             this.ac_btn.Size = new System.Drawing.Size(50, 50);
-            this.ac_btn.TabIndex = 13;
+            this.ac_btn.TabIndex = 17;
             this.ac_btn.Text = "AC";
             this.ac_btn.UseVisualStyleBackColor = false;
             this.ac_btn.Click += new System.EventHandler(this.Ac_btn_Click);
             // 
+            // sinh_btn
+            // 
+            this.sinh_btn.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.sinh_btn.FlatAppearance.BorderSize = 0;
+            this.sinh_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.sinh_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sinh_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sinh_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.sinh_btn.Location = new System.Drawing.Point(120, 0);
+            this.sinh_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.sinh_btn.Name = "sinh_btn";
+            this.sinh_btn.Size = new System.Drawing.Size(50, 50);
+            this.sinh_btn.TabIndex = 16;
+            this.sinh_btn.Text = "Sinh";
+            this.sinh_btn.UseVisualStyleBackColor = false;
+            this.sinh_btn.Click += new System.EventHandler(this.Sinh_btn_Click);
+            // 
+            // tanh_btn
+            // 
+            this.tanh_btn.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.tanh_btn.FlatAppearance.BorderSize = 0;
+            this.tanh_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.tanh_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.tanh_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tanh_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tanh_btn.Location = new System.Drawing.Point(120, 120);
+            this.tanh_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.tanh_btn.Name = "tanh_btn";
+            this.tanh_btn.Size = new System.Drawing.Size(50, 50);
+            this.tanh_btn.TabIndex = 14;
+            this.tanh_btn.Text = "tanh";
+            this.tanh_btn.UseVisualStyleBackColor = false;
+            this.tanh_btn.Click += new System.EventHandler(this.Tanh_btn_Click);
+            // 
+            // cosh_btn
+            // 
+            this.cosh_btn.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.cosh_btn.FlatAppearance.BorderSize = 0;
+            this.cosh_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.cosh_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cosh_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cosh_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cosh_btn.Location = new System.Drawing.Point(120, 60);
+            this.cosh_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.cosh_btn.Name = "cosh_btn";
+            this.cosh_btn.Size = new System.Drawing.Size(50, 50);
+            this.cosh_btn.TabIndex = 15;
+            this.cosh_btn.Text = "Cosh";
+            this.cosh_btn.UseVisualStyleBackColor = false;
+            this.cosh_btn.Click += new System.EventHandler(this.Cosh_btn_Click);
+            // 
             // del_btn
             // 
             this.del_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.del_btn.FlatAppearance.BorderSize = 0;
+            this.del_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.del_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.del_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.del_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.del_btn.Location = new System.Drawing.Point(0, 180);
@@ -466,7 +568,9 @@
             // btn_cos
             // 
             this.btn_cos.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btn_cos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_cos.FlatAppearance.BorderSize = 0;
+            this.btn_cos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btn_cos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn_cos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_cos.Location = new System.Drawing.Point(60, 0);
@@ -481,7 +585,9 @@
             // btn_sin
             // 
             this.btn_sin.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btn_sin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_sin.FlatAppearance.BorderSize = 0;
+            this.btn_sin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btn_sin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.btn_sin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_sin.Location = new System.Drawing.Point(0, 0);
@@ -496,6 +602,8 @@
             // btn_reciprocal
             // 
             this.btn_reciprocal.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btn_reciprocal.FlatAppearance.BorderSize = 0;
+            this.btn_reciprocal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btn_reciprocal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_reciprocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.btn_reciprocal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -511,7 +619,9 @@
             // tan_btn
             // 
             this.tan_btn.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tan_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.tan_btn.FlatAppearance.BorderSize = 0;
+            this.tan_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.tan_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tan_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.tan_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tan_btn.Location = new System.Drawing.Point(0, 60);
@@ -526,6 +636,8 @@
             // factorial_btn
             // 
             this.factorial_btn.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.factorial_btn.FlatAppearance.BorderSize = 0;
+            this.factorial_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.factorial_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.factorial_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.factorial_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -541,7 +653,9 @@
             // log_btn
             // 
             this.log_btn.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.log_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.log_btn.FlatAppearance.BorderSize = 0;
+            this.log_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.log_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.log_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.log_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.log_btn.Location = new System.Drawing.Point(60, 60);
@@ -555,41 +669,77 @@
             // 
             // history_textBox
             // 
+            this.history_textBox.BackColor = System.Drawing.SystemColors.GrayText;
             this.history_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.history_textBox.ForeColor = System.Drawing.SystemColors.Window;
             this.history_textBox.Location = new System.Drawing.Point(510, 32);
             this.history_textBox.Multiline = true;
             this.history_textBox.Name = "history_textBox";
             this.history_textBox.Size = new System.Drawing.Size(170, 395);
             this.history_textBox.TabIndex = 16;
             // 
-            // menuStrip1
+            // menu
             // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(704, 24);
-            this.menuStrip1.TabIndex = 17;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.save,
+            this.helpToolStripMenuItem});
+            this.menu.Location = new System.Drawing.Point(0, 0);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(704, 24);
+            this.menu.TabIndex = 17;
+            this.menu.Text = "menuStrip1";
+            // 
+            // save
+            // 
+            this.save.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveAs,
+            this.clearMenu});
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(37, 20);
+            this.save.Text = "File";
+            // 
+            // saveAs
+            // 
+            this.saveAs.Name = "saveAs";
+            this.saveAs.Size = new System.Drawing.Size(180, 22);
+            this.saveAs.Text = "Save As";
+            this.saveAs.Click += new System.EventHandler(this.SaveAs_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // clearMenu
+            // 
+            this.clearMenu.Name = "clearMenu";
+            this.clearMenu.Size = new System.Drawing.Size(180, 22);
+            this.clearMenu.Text = "Clear";
+            this.clearMenu.Click += new System.EventHandler(this.ClearMenu_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(704, 441);
             this.Controls.Add(this.history_textBox);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menu;
             this.Name = "Form1";
             this.Text = "Calculator";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -628,8 +778,17 @@
         private System.Windows.Forms.Button log_btn;
         private System.Windows.Forms.TextBox history_textBox;
         private System.Windows.Forms.Button del_btn;
+        private System.Windows.Forms.MenuStrip menu;
+        private System.Windows.Forms.ToolStripMenuItem save;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFile;
+        private System.Windows.Forms.ToolStripMenuItem saveAs;
+        private System.Windows.Forms.Button btn_plusminus;
         private System.Windows.Forms.Button ac_btn;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Button sinh_btn;
+        private System.Windows.Forms.Button tanh_btn;
+        private System.Windows.Forms.Button cosh_btn;
+        private System.Windows.Forms.ToolStripMenuItem clearMenu;
     }
 }
 
