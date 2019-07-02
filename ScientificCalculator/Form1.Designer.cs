@@ -68,9 +68,9 @@
             this.menu = new System.Windows.Forms.MenuStrip();
             this.save = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
-            this.clearMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -103,6 +103,7 @@
             this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
             this.textBox1.Location = new System.Drawing.Point(10, 32);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(470, 44);
             this.textBox1.TabIndex = 1;
             // 
@@ -679,6 +680,8 @@
             this.history_textBox.Location = new System.Drawing.Point(490, 32);
             this.history_textBox.Multiline = true;
             this.history_textBox.Name = "history_textBox";
+            this.history_textBox.ReadOnly = true;
+            this.history_textBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.history_textBox.Size = new System.Drawing.Size(200, 398);
             this.history_textBox.TabIndex = 16;
             // 
@@ -705,22 +708,22 @@
             // saveAs
             // 
             this.saveAs.Name = "saveAs";
-            this.saveAs.Size = new System.Drawing.Size(180, 22);
+            this.saveAs.Size = new System.Drawing.Size(114, 22);
             this.saveAs.Text = "Save As";
             this.saveAs.Click += new System.EventHandler(this.SaveAs_Click);
+            // 
+            // clearMenu
+            // 
+            this.clearMenu.Name = "clearMenu";
+            this.clearMenu.Size = new System.Drawing.Size(114, 22);
+            this.clearMenu.Text = "Clear";
+            this.clearMenu.Click += new System.EventHandler(this.ClearMenu_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // clearMenu
-            // 
-            this.clearMenu.Name = "clearMenu";
-            this.clearMenu.Size = new System.Drawing.Size(180, 22);
-            this.clearMenu.Text = "Clear";
-            this.clearMenu.Click += new System.EventHandler(this.ClearMenu_Click);
             // 
             // Form1
             // 
@@ -734,7 +737,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menu;
             this.Name = "Form1";
